@@ -1,0 +1,66 @@
+{
+  "skenario": "D",
+  "model_type": "Random Forest",
+  "best_params": {
+    "max_depth": 16,
+    "max_features": 0.40957975133212854,
+    "min_samples_leaf": 3,
+    "n_estimators": 439
+  },
+  "feature_names": [
+    "air_temperature_c",
+    "relative_humidity",
+    "soil_temperature_c",
+    "soil_water_content",
+    "solar_radiation",
+    "vpd_kpa",
+    "hour_sin",
+    "hour_cos",
+    "doy_sin",
+    "doy_cos",
+    "month",
+    "soil_ph",
+    "soil_organic_carbon",
+    "site_US-Ne1",
+    "site_US-Ne2",
+    "site_US-Ne3"
+  ],
+  "feature_count": 16,
+  "target": "carbon_flux",
+  "sites_used": [
+    "US-Ne1",
+    "US-Ne2",
+    "US-Ne3"
+  ],
+  "train_size": 482312,
+  "test_size": 120580,
+  "metrics_test": {
+    "MAE": 1.992344116541308,
+    "RMSE": 4.541399738865364,
+    "R2": 0.8195542040705651
+  },
+  "metrics_train_r2": 0.9376403146356558,
+  "overfit_gap": 0.11808611056509066,
+  "baseline_r2_skenario_a": 0.613,
+  "soil_lookup": {
+    "US-Ne1": {
+      "soil_ph": 6.1,
+      "soil_organic_carbon": 18.2
+    },
+    "US-Ne2": {
+      "soil_ph": 6.35,
+      "soil_organic_carbon": 21.5
+    },
+    "US-Ne3": {
+      "soil_ph": 5.95,
+      "soil_organic_carbon": 16.8
+    }
+  },
+  "preprocessing_notes": [
+    "Ganti -9999 dengan NaN sebelum semua operasi",
+    "Hapus semua kolom _QC untuk mencegah data leakage",
+    "Gunakan cyclical encoding untuk hour dan day_of_year",
+    "Fitur soil_ph dan soil_organic_carbon konstan per site_id",
+    "site_id harus di-one-hot-encode sebelum prediksi"
+  ]
+}

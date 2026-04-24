@@ -20,3 +20,5 @@ build/
 
 dataset/AmeriFlux/
 dataset/WoSIS (ISRIC)/
+
+output_skenario_d/carbon_flux_model_skenario_d.pkl
