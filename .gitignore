@@ -1,0 +1,22 @@
+.venv
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.idea/
+.vscode/
+*.log
+.DS_Store
+*.egg-info/
+dist/
+build/
+
+dataset/AmeriFlux/
+dataset/WoSIS (ISRIC)/

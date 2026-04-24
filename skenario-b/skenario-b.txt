@@ -1,0 +1,14 @@
+Tugas Anda: Saya ingin melanjutkan eksperimen prediksi carbon_flux saya ke Skenario B. Pada Skenario A, kita telah mendapatkan baseline model menggunakan RandomForestRegressor dengan performa R2 = 0.613 murni dari fitur dinamis (time-series).
+Sekarang, bantu saya membuat script Python untuk mengekstraksi data tanah statis dari dataset WoSIS dan menggabungkannya ke dataframe AmeriFlux kita, lalu melatih ulang modelnya.
+Informasi Data: Lokasi Site AmeriFlux (US-Ne1): Latitude ~41.165, Longitude ~-96.476 File Dataset WoSIS (Statis):
+1. D:\Tugas Kuliah\Semester 6\MBKM - Magang\carbon\code-dataset-3\WoSIS (ISRIC)\wosis_latest_PH.csv
+2. D:\Tugas Kuliah\Semester 6\MBKM - Magang\carbon\code-dataset-3\WoSIS (ISRIC)\wosis_latest_orgc.csv
+
+Instruksi Pipeline Skenario B:
+1. Pencarian Spasial: Buat fungsi untuk membaca kedua file WoSIS tersebut. Filter atau cari baris data yang memiliki nilai Latitude dan Longitude terdekat dengan site US-Ne1 (selisih jarak absolut terkecil).
+2. Ekstraksi Nilai: Ambil rata-rata nilai pH dan Karbon Organik (biasanya ada di kolom value_avg atau sejenisnya) dari titik terdekat tersebut. Cetak/print nilai yang ditemukan dan jarak aproksimasinya agar saya bisa memvalidasi keabsahannya.
+3. Broadcasting (Penggabungan): Buat duplikat dari dataframe Skenario A yang sudah bersih (tanpa kolom _QC dan sudah ada fitur waktu). Tambahkan dua kolom baru: soil_ph dan soil_organic_carbon, lalu isi seluruh barisnya dengan nilai tunggal (konstan) yang ditemukan dari Langkah 2.
+4. Training Skenario B: Lakukan Time-Series Split (80/20) kembali pada dataframe baru ini. Latih RandomForestRegressor.
+5. Evaluasi: Cetak hasil MAE, RMSE, dan R2 untuk Skenario B ini dengan jelas di layar (print).
+6. Bandingkan: Tambahkan logika print yang membandingkan Skenario B dengan baseline Skenario A (R2: 0.613). Apakah fitur statis tanah ini meningkatkan performa atau justru menurunkannya?
+Tolong berikan kode yang modular dan rapi untuk melengkapi sel Jupyter Notebook saya.

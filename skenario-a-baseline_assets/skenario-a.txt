@@ -1,0 +1,23 @@
+Tugas Anda: Anda adalah Senior Data Scientist. Bantu saya menulis kode Python lengkap (untuk Jupyter Notebook) guna membangun baseline model (Skenario A) untuk prediksi emisi karbon. Fokus utama kita adalah membandingkan performa model RandomForestRegressor dan XGBoostRegressor.
+Konteks Data: Saya hanya akan menggunakan dataset time-series dinamis lingkungan dari stasiun AmeriFlux. Lokasi file lokal saya (gunakan path ini di kode): D:\Tugas Kuliah\Semester 6\MBKM - Magang\carbon\dataset-3\AmeriFlux\AMF_US-Ne1_FLUXNET_2001-2024_v1.3_r1\AMF_US-Ne1_FLUXNET_FLUXMET_HR_2001-2024_v1.3_r1.csv
+
+Instruksi Preprocessing & Mapping:
+1. Baca file CSV tersebut. Tangani missing values (-9999).
+2. Lakukan pemetaan (mapping) nama kolom ekuivalen dari AmeriFlux ke skema sistem IoT saya sebagai berikut:
+-TIMESTAMP_START (atau kolom waktu utama) ubah menjadi reading_time
+-Kolom berawalan TA_ (suhu udara) ubah menjadi air_temperature_sensor
+-Kolom RH (kelembapan) ubah menjadi air_humidity_sensor
+-Kolom berawalan TS_ (suhu tanah) ubah menjadi soil_temperature
+-Kolom berawalan SWC_ (kadar air tanah) ubah menjadi soil_moisture
+-Kolom target NEE_VUT_REF (atau fluks setara) ubah menjadi target akhir: carbon_flux
+3. Ekstrak reading_time menjadi fitur waktu: hour, day, month.
+4. Drop baris yang tidak memiliki nilai pada variabel target atau fitur utama (hindari interpolasi data target).
+
+Instruksi Modeling & Evaluasi:
+1. Gunakan Time-Series Split (pemisahan secara kronologis, misalnya 80% awal untuk train, 20% akhir untuk test). Jangan gunakan random split biasa karena ini data berurutan waktu.
+2. Latih RandomForestRegressor dan XGBoostRegressor menggunakan fitur dinamis dan waktu di atas.
+3. Bandingkan performa keduanya menggunakan metrik: MAE, RMSE, dan R2.
+4. Cetak tabel hasil komparasi agar mudah saya baca.
+5. Buat visualisasi bar chart untuk Feature Importance dari model yang paling baik performanya (kemungkinan XGBoost).
+
+Tolong berikan kode yang sangat modular, rapi, terdokumentasi dengan baik, dan mematuhi validitas saintifik time-series forecasting.
