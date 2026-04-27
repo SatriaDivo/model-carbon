@@ -29,6 +29,7 @@ Repo ini disusun bertahap dari baseline sampai pipeline final:
 
 Dokumentasi pendukung:
 
+- [riset/riset-literatur-carbon-flux-cci-csi.md](./riset/riset-literatur-carbon-flux-cci-csi.md)
 - [skenario-a-baseline_assets/skenario-a-baseline.md](./skenario-a-baseline_assets/skenario-a-baseline.md)
 - [skenario-b/skenario-b.md](./skenario-b/skenario-b.md)
 - [skenario-c/skenario-c.md](./skenario-c/skenario-c.md)
@@ -90,6 +91,9 @@ Output yang dihasilkan notebook final:
 ├── dataset/
 │   ├── AmeriFlux/
 │   └── WoSIS (ISRIC)/
+├── riset/
+│   ├── Riset Literatur untuk Carbon Flux, CCI, dan CSI pada Proyek Sekuestrasi Karbon.docx
+│   └── riset-literatur-carbon-flux-cci-csi.md
 ├── skenario-a-baseline_assets/
 ├── skenario-b/
 ├── skenario-c/
