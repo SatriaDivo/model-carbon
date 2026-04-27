@@ -20,5 +20,8 @@ build/
 
 dataset/AmeriFlux/
 dataset/WoSIS (ISRIC)/
+dataset/agrisense/
+dataset/synthetic_carbon/
+.playwright-mcp/
 
 output_skenario_d/carbon_flux_model_skenario_d.pkl
